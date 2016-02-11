@@ -2,8 +2,9 @@ public class Test extends Component
 {
 	String mClassName;
 	
-	public Test()
+	public Test(Entity containingEntity)
 	{
+		super(containingEntity);
 		mClassName = super.getType();
 	}
 
