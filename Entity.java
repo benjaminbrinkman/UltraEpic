@@ -1,4 +1,11 @@
+import java.util.*;
+
 public class Entity
 {
-	// TODO:  See issue #3
+	private Set<Component> mComponents = new HashSet<Component>();
+	
+	public void addComponent(Component component)
+	{
+		mComponents.add(component);
+	}
 }
