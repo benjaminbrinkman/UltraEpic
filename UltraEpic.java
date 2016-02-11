@@ -2,7 +2,9 @@ public class UltraEpic
 {
 	public static void main(String[] args)
 	{
-		Test testComponent = new Test();
+		Entity testEntity = new Entity();
+		Test testComponent = new Test(testEntity);
 		System.out.println(testComponent.getClassName());
+		System.out.println(testEntity == testComponent.getContainingEntity());
 	}
 }
