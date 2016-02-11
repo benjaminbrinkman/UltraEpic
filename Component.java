@@ -1,4 +1,7 @@
 public abstract class Component
 {
-	// TODO: see issue #2
+	public String getType()
+	{
+		return this.getClass().getName();
+	}
 }
