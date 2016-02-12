@@ -38,7 +38,7 @@ public class Stats extends Component
 	{
 		if (offset < 0)
 		{
-			throw new InvalidArgumentException("You cannot pass a negative offset!  It can only increase the stats!");
+			throw new IllegalArgumentException("You cannot pass a negative offset!  It can only increase the stats!");
 		}
 	}
 	
