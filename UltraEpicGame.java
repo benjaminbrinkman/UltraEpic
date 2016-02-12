@@ -22,7 +22,14 @@ public class UltraEpicGame extends Game
 		Entity charactor2 = entityArray[1];
 		
 		attack(charactor1, charactor2);
-		attack(charactor2, charactor1);
+		try 
+		{
+			heal(charactor2);
+		}
+		catch (IllegalArgumentException iae)
+		{
+			attack(charactor2, charactor1);
+		}
 	}
 	
 	private Entity createPlayer(String playerName)
@@ -72,5 +79,26 @@ public class UltraEpicGame extends Game
 		defender.addComponent(defenderStatus);
 		
 		mEntities.add(defender);
+	}
+	
+	private void heal(Entity person)
+	{
+		Random diceRoller = new Random();
+		Stats personStats = (Stats)person.getComponentOfType("Stats");
+		Status personStatus = (Status)person.getComponentOfType("Status");
+		
+		if (personStatus.getDivineMana() > 0)
+		{
+			personStatus.castDivineSpell(1);
+			int healRoll = diceRoller.nextInt(4);
+			personStatus.heal(healRoll);
+		}
+		else
+		{
+			throw new IllegalArgumentException("Not enough mana");
+		}
+		
+		person.addComponent(personStatus);
+		
 	}
 }
