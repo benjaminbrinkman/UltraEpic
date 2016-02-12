@@ -8,4 +8,17 @@ public class Entity
 	{
 		mComponents.add(component);
 	}
+	
+	public Component getComponentOfType(String type)
+	{
+		for (Component c : mComponents)
+		{
+			if (c.getClass().getName() == type)
+			{
+				return c;
+			}
+		}
+		
+		throw new IllegalArgumentException(type + " component does not exist in the entity.");
+	}
 }
