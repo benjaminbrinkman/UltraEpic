@@ -1,4 +1,5 @@
 public abstract class Game
 {
-	// TODO: see issue #4
+	// Leaving empty for now.  Will consider refactoring methods into this class
+	// when working on issue #5
 }
