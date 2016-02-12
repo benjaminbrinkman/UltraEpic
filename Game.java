@@ -13,7 +13,7 @@ public abstract class Game
 		personStats.increaseAttack(diceRoller.nextInt(6) + 1);
 		personStats.increaseDefense(diceRoller.nextInt(6) + 1);
 		personStats.increaseWisdom(diceRoller.nextInt(6) + 1);
-		personStats.increaseHitPoints(diceRoller.nextInt(6) + 1);
+		personStats.increaseHitPoints((diceRoller.nextInt(6) + 1) * 10);
 		
 		person.addComponent(personStats);
 		
